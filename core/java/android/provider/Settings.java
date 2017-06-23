@@ -5634,6 +5634,12 @@ public static final String PHONE_BLACKLIST_REGEX_ENABLED = "phone_blacklist_rege
         public static final String LOCK_SCREEN_WEATHER_WIND_COLOR = "lock_screen_weather_wind_color";
 
         /**
+         * Smartbar touch sounds
+         * @hide
+         */
+        public static final String NAV_BUTTON_SOUNDS = "nav_button_sounds";
+
+        /**
          * Color of Lockscreen Shortcuts Icons
          * @hide
          */
@@ -6045,6 +6051,21 @@ public static final String PHONE_BLACKLIST_REGEX_ENABLED = "phone_blacklist_rege
          * @hide
          */
         public static final String NO_NAVIGATION_NOTIFICATION = "no_navigation_notification";
+
+        /**
+         * Wheter to use corner radius for Slim Recents cards
+         * @hide
+         */
+        public static final String SLIM_RECENTS_CORNER_RADIUS = "slim_recents_corner_radius";
+
+        /**
+         * Whether to answer or silence an incoming call with a swipe action on fingerprint scanner
+         * 0 = don't do anything (default)
+         * 1 = answer call with both swipe up and swipe down actions
+         * 2 = swipe up to answer, swipe down to silence the call
+         * @hide
+         */
+        public static final String FP_SWIPE_CALL_ACTIONS = "fp_swipe_call_actions";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
