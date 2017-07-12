@@ -4739,6 +4739,12 @@ public static final String PHONE_BLACKLIST_REGEX_ENABLED = "phone_blacklist_rege
         public static final String NAV_BAR_DYNAMIC = "nav_bar_dynamic";
 
         /*
+         * Whether to light hw keys when screen pressed
+         * @hide
+         */
+        public static final String BUTTON_LIGHT_SCREEN = "button_light_screen";
+
+        /*
          * Whether to show the weather info on the lock screen
          * @hide
          */
@@ -7640,6 +7646,15 @@ public static final String PHONE_BLACKLIST_REGEX_ENABLED = "phone_blacklist_rege
         public static final String PULSE_CUSTOM_BUTTONS_OPACITY = "pulse_custom_buttons_opacity";
 
         /**
+         * Long press delay for smartbar buttons
+         * @hide
+         * 0: Default (fast)
+         * 1: Normal delay
+         * 2: Long delay
+         */
+        public static final String SMARTBAR_LONGPRESS_DELAY = "smartbar_longpress_delay";
+
+        /**
          * A flag containing settings used for biometric weak
          * @hide
          */
@@ -9152,6 +9167,13 @@ public static final String PHONE_BLACKLIST_REGEX_ENABLED = "phone_blacklist_rege
          * @hide
          */
         public static final String FORCE_CHARGE_BATTERY_TEXT = "force_charge_battery_text";
+
+         /**
+         * Whether to pulse the battery icon when charging
+         *
+         * @hide
+         */
+       public static final String STATUS_BAR_PULSE_CHARGING_BATTERY = "status_bar_pulse_charging_battery";
 
         /**
          * Charging symbol near battery text percentage

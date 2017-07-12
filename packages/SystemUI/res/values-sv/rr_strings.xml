@@ -152,6 +152,9 @@
   <string name="quick_settings_locale_label">Språk</string>
   <string name="quick_settings_locale_more_locales_toast">Konfigurera flera språk om du vill växla mellan funktioner</string>
   <!-- Suspend Actions Tile -->
+  <string name="accessibility_quick_settings_suspend_actions_on">Avbryt åtgärder aktiverat</string>
+  <string name="accessibility_quick_settings_suspend_actions_off">Avbryt åtgärder inaktiverat</string>
+  <string name="quick_settings_suspend_actions_label">Avbryt åtgärder</string>
   <!-- Perf Profile Tile -->
   <string name="qs_tile_performance">Batteritid</string>
   <!-- Content description of the battery mode tile in quick settings when on, power save mode (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -177,6 +180,7 @@
   <string name="quick_settings_performance_profile_detail_title">Batteritid</string>
   <!-- Compass QS Tile -->
   <string name="quick_settings_compass_label">Kompass</string>
+  <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
   <string name="quick_settings_compass_init">Initierar\u2026</string>
   <string name="accessibility_quick_settings_compass_off">Kompass av.</string>
   <string name="accessibility_quick_settings_compass_on">Kompass på.</string>
@@ -265,4 +269,6 @@
   <!-- data saver icon switch -->
   <string name="status_bar_datasaver">Databesparing</string>
   <!-- No navigation warning notification -->
+  <string name="no_navigation_warning_title">Alla navigeringsmetoder inaktiverade</string>
+  <string name="no_navigation_warning_text">Knacka lätt för att aktivera</string>
 </resources>
