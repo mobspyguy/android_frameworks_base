@@ -2856,7 +2856,7 @@ public final class ActivityManagerService extends ActivityManagerNative
 
         mProcessStats = new ProcessStatsService(this, new File(systemDir, "procstats"));
 
-        mAppOpsService = new AppOpsService(new File(systemDir, "appops.xml"), mHandler);
+        mAppOpsService = new AppOpsService(new File(systemDir, "appops.xml"), mHandler, this);
         mAppOpsService.startWatchingMode(AppOpsManager.OP_RUN_IN_BACKGROUND, null,
                 new IAppOpsCallback.Stub() {
                     @Override public void opChanged(int op, int uid, String packageName) {
@@ -22069,6 +22069,9 @@ public final class ActivityManagerService extends ActivityManagerNative
             }
             if (DEBUG_PSS) Slog.d(TAG_PSS, "Dump heap finished for " + path);
             mHandler.sendEmptyMessage(POST_DUMP_HEAP_NOTIFICATION_MSG);
+
+            // Forced gc to clean up the remnant hprof fd.
+            Runtime.getRuntime().gc();
         }
     }
 

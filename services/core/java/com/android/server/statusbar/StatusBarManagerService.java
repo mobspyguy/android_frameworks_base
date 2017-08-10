@@ -472,6 +472,22 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
         }
     }
 
+    /**
+     * Window manager notifies SystemUI of navigation bar "left in landscape" changes
+     *
+     * @hide
+     */
+    @Override
+    public void leftInLandscapeChanged(boolean isLeft) {
+        enforceStatusBar();
+        if (mBar != null) {
+            try {
+                mBar.leftInLandscapeChanged(isLeft);
+            } catch (RemoteException ex) {
+            }
+        }
+    }
+
     public void addTile(ComponentName component) {
         enforceStatusBarOrShell();
 
@@ -747,30 +763,11 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
         }
     }
 
-    public void toggleLastApp() {
-        if (mBar != null) {
-            try {
-                mBar.toggleLastApp();
-            } catch (RemoteException ex) {}
+    private void enforceStatusBarOrShell() {
+        if (Binder.getCallingUid() == Process.SHELL_UID) {
+            return;
         }
-    }
-
-    @Override
-    public void toggleKillApp() {
-        if (mBar != null) {
-            try {
-                mBar.toggleKillApp();
-            } catch (RemoteException ex) {}
-        }
-    }
-
-    @Override
-    public void toggleScreenshot() {
-        if (mBar != null) {
-            try {
-                mBar.toggleScreenshot();
-            } catch (RemoteException ex) {}
-        }
+        enforceStatusBar();
     }
 
     @Override
@@ -778,15 +775,10 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
         if (mBar != null) {
             try {
                 mBar.toggleOrientationListener(enable);
-            } catch (RemoteException ex) {}
+            } catch (RemoteException ex) {
+                // system is dead
+            }
         }
-    }
-
-    private void enforceStatusBarOrShell() {
-        if (Binder.getCallingUid() == Process.SHELL_UID) {
-            return;
-        }
-        enforceStatusBar();
     }
 
     private void enforceStatusBar() {
